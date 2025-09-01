@@ -1,10 +1,17 @@
 import React from "react";
 
-export function Greetings(){
+export function Greetings(props){
+  console.log(props)
   let isEvening = (new Date()).getHours()>18;
-  return isEvening 
-  ? <h3>Good Evening!</h3>
-  : <h3>Good Day!</h3>
+  let greetingsHeader = isEvening
+  ? <h3>Good Evening, {props.name}</h3>
+  : <h3>Good Morning, {props.name}</h3>
+  return (
+    <>
+      {greetingsHeader}
+      <p>You have {props.numOfMsgs} new messages!</p>
+    </>
+  )
   
 }
 

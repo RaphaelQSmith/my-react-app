@@ -1,3 +1,3 @@
 export {CounterButtonPage} from './CounterButtonPage';
-export { HomePage} from './Homepage'
+export { Homepage } from './Homepage'
 export { PeopleListPage} from './PeopleListPage'

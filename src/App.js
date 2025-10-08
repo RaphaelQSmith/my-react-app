@@ -1,24 +1,26 @@
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Homepage, CounterButtonPage, PeopleListPage} from './pages/'
 import './App.css';
-import {Greetings} from './components/Greetings';
-import { PeopleList } from './components/PeopleList';
-import { useState } from 'react';
-
+import { ProtectedPage } from './pages/ProtectedPage';
 
 
 function App() {
-
-  const [numberOfClicks, setNumberOfClicks]= useState(0);
-  const increment = () =>setNumberOfClicks(numberOfClicks + 1);
   
   return (
-    <div className="App">
-      <header className="App-header">
-      <Greetings
-      onIncrement={increment} 
-      numberOfClicks={numberOfClicks} />
-      <PeopleList people={people} />
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Link to='/'>Home</Link>
+        <Link to='/counter'>Counter</Link>
+        <Link to='/list'>People</Link>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/counter" element={<CounterButtonPage />} />
+          <Route path="/list" element={<PeopleListPage />} />
+          <Route path="/protected" element={<ProtectedPage />} />          
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

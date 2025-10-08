@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Homepage, CounterButtonPage, PeopleListPage} from './pages/'
+import { Homepage, CounterButtonPage, PeopleListPage, ControlledFormPage} from './pages/'
 import './App.css';
 import { ProtectedPage } from './pages/ProtectedPage';
 
@@ -17,7 +16,8 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/counter" element={<CounterButtonPage />} />
           <Route path="/list" element={<PeopleListPage />} />
-          <Route path="/protected" element={<ProtectedPage />} />          
+          <Route path="/protected" element={<ProtectedPage />} />
+          <Route path="/controlled-form" element={ <ControlledFormPage />} />          
         </Routes>
       </div>
     </Router>

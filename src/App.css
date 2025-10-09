@@ -24,9 +24,25 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar {
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
+
+.navbar ul{
+  flex: 1;
+  justify-content: center;
+  max-width: 300px;
+  background-color: lightgray;
+}
+
+.navbar li{
+  text-decoration-style: none;
+  justify-content: center;
+}
+
 
 @keyframes App-logo-spin {
   from {
